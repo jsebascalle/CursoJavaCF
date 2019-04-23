@@ -110,5 +110,251 @@ Mensaje con \ diagonal inversa
 Mensaje con " comillas dobles
 Mensaje con ' comillas simples
 
+#format String Java
 
+Listado de ejemplos sobre el método format de la clase String.
+
+Recordemos que el método format retornar un nuevo String. Si nosotros únicamente mostraremos en consola el nuevo String podemos optar por usar el método printf
+
+System.out.printf(formato, valores);
+STRING
+String nombre = "Codi";
+String apellido = "Facilito";
+
+String nombreCompleto = String.format("%s %s", nombre, apellido);
+System.out.println(nombreCompleto);
+ENTEROS
+String resultado = String.format("%d - %d - %d", 10, 20, 30);
+System.out.println(resultado);
+FLOAT
+float pi = 3.14159265359f;
+
+String resultado = String.format("%f - Decimales: %.2f", pi, pi);
+System.out.println(resultado);
+BOOLEAN
+int cantidad = 10;
+boolean mayor = cantidad > 5;
+
+String resultado = String.format("La cantidad es mayor a %d : %b", 
+                                                cantidad, mayor);
+System.out.println(resultado);
+ORDEN
+El reemplazo de los valores es lineal, sin embargo, habrá ocasiones en las cuales nosotros necesitemos especificar el orden, en esos casos seguiremos la siguiente estructura %, posición, $, tipo
+
+String uno = "Uno";
+String dos = "Dos";
+String tres = "Tres";
+
+String resultado = String.format("%3$s - %2$s - %1$s", 
+                             uno, dos, tres);
+System.out.println(resultado);
+float pi = 3.14159265359f;
+
+String resultado = String.format("%1f - Decimales: %1$.2f", pi, pi);
+System.out.println(resultado);
+
+
+#Ejemplos switch en Java
+
+Aquí un listado de ejemplos los cuales nos pueden ayudar a comprender de una mejor manera el switch en Java.
+
+Estructura básica.
+
+switch (expression) { 
+    case value1:
+     // secuencia de sentencias.
+     break;
+    case value2:
+     // secuencia de sentencias.
+     break;
+    .
+    .
+    . 
+    case valueN :
+     // secuencia de sentencias.
+     break;
+    default:
+     // Default secuencia de sentencias.
+  }
+Ejemplos con tipos de datos enteros.
+
+int i = 2;
+
+switch(i) {
+  case 0:
+    System.out.println("i es cero.");
+    break;
+  case 1:
+    System.out.println("i es uno.");
+    break;
+  case 2:
+    System.out.println("i es dos.");
+    break;
+  case 3:
+    System.out.println("i es tres.");
+    break;
+  default:
+    System.out.println("i es mayor a tres.");
+}
+int i = 2;
+
+switch(i) {
+  case 0:
+  case 1:
+  case 2:
+  case 3:
+  case 4:
+    System.out.println("i es menor que cinco");
+    break;
+  case 5:
+    System.out.println("i es cinco");
+    break;
+  case 6:
+  case 7:
+  case 8:
+  case 9:
+    System.out.println("i es menor que diez y mayor a cinco");
+    break;
+  default:
+    System.out.println("i es diez o mayor a diez");
+}
+int numeroMes = 4;
+String estacion = "", mes = "";
+
+switch (numeroMes) {
+  case 12:
+    mes = "Diciembre";
+  case 1:
+    mes = "Enero";
+  case 2:
+    mes = "Febrero";
+    estacion = "Invierno";
+    break;
+  case 3:
+    mes = "Marzo";
+  case 4:
+    mes = "Abril";
+  case 5:
+    mes = "Mayo";
+    estacion = "Primavera";
+    break;
+  case 6:
+    mes = "Junio";
+  case 7:
+    mes = "Julio";
+  case 8:
+    mes = "Agosto";
+    estacion = "Verano";
+    break;
+  case 9:
+    mes = "Septiembre";
+  case 10:
+    mes = "Octubre";
+  case 11:
+    mes = "Noviembre";
+    estacion = "Otoño";
+    break;
+}
+
+System.out.println("El mes de " + mes + " se encuentra en la estación " + estacion);
+Ejemplos con Strings.
+
+Aun que el switch nos permite comparar la expresión con un caso, nosotros debemos de asegurarnos que ambos valores sean iguales; Para ello una buena forma es estandarizar la expresión, ya sea convirtiendo todas sus letras en mayusculas o minúsculas.
+
+String tipoDia = "";
+String diaSemana = "Lunes";
+
+switch (diaSemana.toLowerCase()) {
+     case "lunes":
+         tipoDia = "Inicio de semana";
+         break;
+     case "martes":
+     case "míercoles":
+     case "jueves":
+       tipoDia = "Mediados de semana";
+         break;
+     case "viernes":
+       tipoDia = "Inicio de fin se semana";
+         break;
+     case "sábado":
+     case "domingo":
+       tipoDia = "Fin de seman";
+         break;
+ }
+
+System.out.println(diaSemana + " es " + tipoDia);
+
+#Strings como Cadenas Java
+
+Como mencionamos anteriormente un Strings no es más que una cadena de caracteres, caracteres que se encuentran en una posición en especifica, es decir, poseen un índice.
+
+Al igual que los arreglos los String comenzarán en el índice 0.
+
+Si nosotros queremos conocer la cantidad de caracteres que posee un String haremos uso del método length().
+
+String mensaje = "Hola Mundo";
+System.out.println(mensaje.length());
+Podemos obtener un carácter con respecto a su índice utilizando el método charAt(). Este método nos retorna una variable de tipo char.
+
+String mensaje = "Hola Mundo";
+char lentraH = mensaje.charAt(0);
+System.out.println(lentraH);
+Si no conocemos en que índice se encuentra un caracter, haremos uso de los métodos indexOf o lastIndexOf.
+
+String mensaje = "Hola Mundo";
+int indice = mensaje.indexOf("M");
+
+System.out.println(indice);  
+Ambos métodos nos retornarán el índice de la primera aparición del caracter a buscar, la única diferencia es que indexOf hará la búsqueda de izquierda a derecha, caso contrario con lastIndexOf, que será de derecha a izquierda.
+
+En dado caso el caracter a buscar no exista dentro del String, ambos métodos nos retornarán -1.
+
+Si queremos que la búsqueda comience a partir de un índice, colocaremos un segundo argumento, el índice a partir del cual se iniciará la búsqueda.
+
+String mensaje = "Este mensaje posee muchas letras a";
+int indicePrimeraA = mensaje.indexOf("a");
+int indiceSegundaA = mensaje.indexOf("a" indicePrimeraA + 1 );
+En este caso buscamos el índice de la segunda letra a.
+
+Si queremos obtener un sub String nos apoyaremos del método substring.
+
+String.substring(indiceInicial) retorna un sub String a partir del índice indicado hasta el último carácter del String.
+String mensaje = "Hola Mundo";
+int indiceLetraM = mensaje.indexOf("M");
+
+
+String subString = mensaje.substring(indiceLetraM);
+System.out.println(subString);
+String.substring(indiceInicial, indiceFinal) retornar un sub String a partir del índice indicado hasta el índice final.
+String mensaje = "Hola Mundo";
+int indiceLetraM = mensaje.indexOf("M"); 
+
+String subString = mensaje.substring(indiceLetraM, indiceLetraM + 2);
+System.out.println(subString);
+
+#Arreglos como parametros
+
+En Java nosotros podemos trabajar con métodos los cuales reciban como parámetros arreglos.
+
+public static void showElements(String[] array) {
+ for(String sentencia : arreglos)
+  System.out.println(sentencia);
+}
+En este caso tenemos un método estático (método de clase) el cual recibe como parámetros un arreglo de Strings.
+
+El arreglo como parámetros seguirá la siguiente estructura.
+
+Tipo dato [] nombre parámetros
+ejemplo
+
+String[] array
+Para hacer uso de este método, únicamente debemos de hacer uso de la clase y colocar como argumento un arreglo.
+
+String elements[] = { "a", "e", "i", "o", "u"};
+Class.showElements(elements);
+Algo interesante a mencionar es que nuestra clase principal en su método estático main, recibe como parámetros un arreglo de Strings, arreglo que no será más que los argumentos que nosotros coloquemos al ejecutar nuestro programa.
+
+#Documentacion API JAVA
+
+https://docs.oracle.com/javase/9/docs/api/index.html?overview-summary.html
 
