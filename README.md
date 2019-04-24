@@ -1,3 +1,5 @@
+http://www.oracle.com/technetwork/java/javase/downloads/index.html?ssSourceSiteId=otnes
+
 #TIPOS DE DATOS
 En Java existen ocho tipos de datos, también conocidos como tipos primitivos : byte, short, int, long, char, float, double y boolean. A partir de estos tipos de datos nosotros podemos clasificarlos en cuatro grupos:
 
@@ -357,4 +359,33 @@ Algo interesante a mencionar es que nuestra clase principal en su método estát
 #Documentacion API JAVA
 
 https://docs.oracle.com/javase/9/docs/api/index.html?overview-summary.html
+
+#Clase System
+
+Una de las clases con las que más nos encontraremos trabajando en nuestro día a día es la clase System.
+
+Clase se encuentra en el paquete Java.Lang así que no es necesario que nosotros la importemos para poder hacer uso de ella.
+
+Esta clase nos permite trabajar con los diferentes canales de datos de nuestro programa. La clase posee tres atributos staticos, uno por cada canal.
+
+in. Standard Input stream.
+out. Standard Output stream.
+err. Standard Error stream.
+Si no te encuentras familiarizado con los conceptos (standard input, standard error, etc...) te recomiendo que le eches un vistazo ha este artículo Artículo ?
+
+Si nosotros queremos dar una salida en consola de nuestro programa, debemos de hacer uso del método print, printf o println. Estos métodos se encuentran tanto en el atributo out como en el atributo error. Es importante mencionar que estos tres métodos, son métodos sobrecargados, así que podemos hacer uso de ellos con una variedad de argumentos.
+
+Haremos uso del atributo out siempre y cuando necesitemos que el usuario visualice un mensaje en consola y este mensaje no sea un error o advertencia. Por otro lado haremos uso del atributo err siempre y cuando el mensajes que queremos que el usuario visualice sea un error o advertencia.
+
+Ejemplos
+
+System.out.println("Bienvenido de nuevo "+ username);
+if(error){
+ System.out.println("Lo sentimo, algo inesperado acaba de ocurrir");
+}
+Siempre que nosotros necesitemos trabajar con los datos de entrada de nuestro programa, usaremos el atributo in.
+
+Ejemplo
+
+Scanner sc = new Scanner(System.in);
 

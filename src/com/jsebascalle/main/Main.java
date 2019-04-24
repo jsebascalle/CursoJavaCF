@@ -3,7 +3,8 @@ package com.jsebascalle.main;
 //import com.jsebascalle.ejercicios.EjerciciosArreglos; Importar clases de otros paquetes
 //import com.jsebascalle.ejercicios.*; Importa todas las clases del paquete
 
-import java.util.Scanner;
+//import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Main {
 
@@ -55,15 +56,21 @@ public class Main {
 //		Paquetes -> com.jsebascalle.nombrepaquete -> en mi caso -> ejercicios
 		
 		
-		Scanner sc = new Scanner(System.in);
-		System.out.println("ingresar nombre");
-		String nombre = sc.nextLine();
-		//sc.nextInt();
-		//sc.nextFloat();
-		//sc.nextBoolean();
-		System.out.println("Su nombbre" + nombre);
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("ingresar nombre");
+//		String nombre = sc.nextLine();
+//		//sc.nextInt();
+//		//sc.nextFloat();
+//		//sc.nextBoolean();
+//		System.out.println("Su nombbre" + nombre);
+//		
+//		sc.close();
 		
-		sc.close();
+		
+		String nombre  = JOptionPane.showInputDialog(null,"¿Cual es tu nombre");
+		JOptionPane.showMessageDialog(null,"Su nombbre" + nombre);
+		
+		
 	}
 
 }
