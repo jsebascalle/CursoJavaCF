@@ -3,6 +3,8 @@ package com.jsebascalle.main;
 //import com.jsebascalle.ejercicios.EjerciciosArreglos; Importar clases de otros paquetes
 //import com.jsebascalle.ejercicios.*; Importa todas las clases del paquete
 
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -53,9 +55,15 @@ public class Main {
 //		Paquetes -> com.jsebascalle.nombrepaquete -> en mi caso -> ejercicios
 		
 		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("ingresar nombre");
+		String nombre = sc.nextLine();
+		//sc.nextInt();
+		//sc.nextFloat();
+		//sc.nextBoolean();
+		System.out.println("Su nombbre" + nombre);
 		
-		
-		
+		sc.close();
 	}
 
 }
